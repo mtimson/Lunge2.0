@@ -57,7 +57,8 @@ public class LungManager : MonoBehaviour {
                     cube.AddComponent<Collider>();
                     cube.transform.localScale = new Vector3(35, 35, 35);
                     cube.transform.localPosition = pos;//new Vector3(xPos,yPos-80f,zPos);
-                }
+               // weakPoints[i] = cube;
+            }
                 else { i--; }
             }
 
@@ -78,7 +79,7 @@ public class LungManager : MonoBehaviour {
                 cube.AddComponent<Collider>();
                 cube.transform.localScale = new Vector3(35, 35, 35);
                 cube.transform.localPosition = pos;
-                weakPoints[i]=cube;
+               // weakPoints[i]=cube;
                 //new Vector3(xPos,yPos-80f,zPos);
             }
             else { i--; }
