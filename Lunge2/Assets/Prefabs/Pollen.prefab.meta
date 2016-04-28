@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 43ef88de0db709d4697ba4b14fe200e7
+labels:
+- Architecture
 timeCreated: 1458224627
 licenseType: Free
 NativeFormatImporter:
