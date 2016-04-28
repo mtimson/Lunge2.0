@@ -10,7 +10,7 @@ public abstract class Enemy : MonoBehaviour {
 	//Property for enemy object's health
 	public int Health{ get; protected set; }
 
-	protected void TakeDamage(int damage)
+	protected virtual void TakeDamage(int damage)
 	{
 		this.Health -= damage;
 		if (this.Health <= 0)
