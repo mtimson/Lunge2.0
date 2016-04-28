@@ -24,6 +24,10 @@ public class PollenParticle : Enemy {
 		//Set values from config
 		//Pollen health, attack damage -> parent property, neighbourhood
 	}
+     public override void addEnemy(Vector3 pos)
+    {
+
+    }
 	// Use instantiating a pollen
 	void Start () 
 	{

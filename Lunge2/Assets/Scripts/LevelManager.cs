@@ -9,7 +9,6 @@ using System.IO;
 public class LevelManager : MonoBehaviour {
 
     
-    public GameObject spawnPoint;
     LungManager lung;
     LevelContainer levelcontainer;
     int totalLevel;
@@ -20,10 +19,11 @@ public class LevelManager : MonoBehaviour {
     public void Start()
     {
         lung = gameObject.AddComponent<LungManager>();
-        spawnPoint = GameObject.Find("EnemySpawn");
         levelcontainer = LevelContainer.Load(Path.Combine(Application.dataPath,file));
+        Debug.Log("level");
         //get current level using level number, first level is 0
-         current_Level = levelcontainer.getLevel(0);
+        current_Level = levelcontainer.getLevel(0);
+       
         totalLevel = levelcontainer.getTotalLevels();
         lung.init(current_Level);  
     }

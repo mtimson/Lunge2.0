@@ -9,8 +9,9 @@ public abstract class Enemy : MonoBehaviour {
 	public int AttackDamage{ get; protected set; }
 	//Property for enemy object's health
 	public int Health{ get; protected set; }
+    public abstract void addEnemy(Vector3 pos);
 
-	protected void TakeDamage(int damage)
+    protected void TakeDamage(int damage)
 	{
 		this.Health -= damage;
 		if (this.Health <= 0)

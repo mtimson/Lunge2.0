@@ -14,6 +14,8 @@ public class PollenCollection : MonoBehaviour {
 
 	public void AddPollen(GameObject item) 
 	{
+        item.transform.position = this.transform.position;
+
 		pollenList.Add (item);
 		Debug.Log (pollenList.Count);
 	}
