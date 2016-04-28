@@ -12,12 +12,18 @@ public class Steering
 	private Rigidbody agentRB;
 	private float speed;
 
+    private Vector3 wanderTarget;
+    public float wanderRadius = 10.0f;
+    public float wanderDist = 15.0f;
+    public float wanderJitter = 2.0f;
+
     //Constructor
 	public Steering(GameObject particle, float maxSpeed)
 	{
 		agent = particle;
 		agentRB = particle.GetComponent<Rigidbody> ();
 		speed = maxSpeed;
+        wanderTarget = new Vector3(1.0f, 0.0f, 0.0f);
 	}
 
     //Move toward a target
@@ -27,6 +33,15 @@ public class Steering
 
 		return (DesiredVelocity - agentRB.velocity);
 	}
+    public Vector3 Wander()
+    {
+        wanderTarget += new Vector3(UnityEngine.Random.value * wanderJitter - 1, 0.0f, UnityEngine.Random.value * wanderJitter - 1);
+        wanderTarget = wanderTarget.normalized * wanderRadius;
+
+        Vector3 target = new Vector3();
+        target =  agent.transform.forward * wanderDist + wanderTarget;
+        return target;
+    }
 
     /* METHODS WITHOUT NEIGHBOURHOOD RADIUS*/
     //Ensure separation from flock mates

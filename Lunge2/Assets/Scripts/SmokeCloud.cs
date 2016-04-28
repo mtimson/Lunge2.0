@@ -54,17 +54,8 @@ public class SmokeCloud : Enemy
             smokeParticles.Add(sp);
         }
 	}
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(2);
-            Debug.Log("health: " + this.Health + ", parts: "+ smokeParticles.Count);
-            
-        }
-    }
 
-        void FixedUpdate ()
+    void FixedUpdate ()
     {  
         //If close to weak point, begin moving to next wp
 	    if(Vector3.Distance(transform.position, targetWP) < 1.0)
@@ -73,8 +64,9 @@ public class SmokeCloud : Enemy
             targetWP = UpdateWeakPointPosition();
         }
 
-       // transform.forward = rb.velocity.normalized;
+        // transform.forward = rb.velocity.normalized;
         rb.AddForce(steer.Seek(targetWP), ForceMode.VelocityChange);
+        //rb.AddForce(steer.Wander(), ForceMode.VelocityChange);
         rb.velocity = rb.velocity.normalized * vel;
 	}
 
