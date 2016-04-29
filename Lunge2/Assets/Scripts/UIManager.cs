@@ -48,6 +48,6 @@ public class UIManager : MonoBehaviour {
 	{
         print("ReturnMenu");
         //SceneManager.LoadScene (Menu_Scene);
-        UnityEngine.SceneManagement.SceneManager.LoadScene ("Menu_Scene"); //Return to main menu, level 0
+        UnityEngine.SceneManagement.SceneManager.LoadScene ("Menu Scene"); //Return to main menu, level 0
 	}
 }
