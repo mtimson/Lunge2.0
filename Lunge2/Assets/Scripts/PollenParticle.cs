@@ -38,22 +38,6 @@ public class PollenParticle : Enemy {
 		steer = new Steering (gameObject, vel);
 	}
 	
-	// Update is called once per frame
-	void Update () 
-	{
-		if(Input.GetKeyDown(KeyCode.Space))
-		{
-			Debug.Log("count in keypress" + pc.GetPollenList().Count);
-			Debug.Log(rb.velocity.magnitude);
-		}
-		if(Input.GetKeyDown(KeyCode.A))
-		{
-			Debug.Log(rb.velocity.magnitude);
-		}
-		//pollenList
-		//Debug.Log (rb.velocity);
-	}
-
 	void FixedUpdate()
 	{
 		transform.forward = rb.velocity.normalized;
@@ -118,5 +102,18 @@ public class PollenParticle : Enemy {
 		transform.forward = Vector3.Reflect (transform.forward, contact.normal);
 		//rb.AddForce (vel * transform.forward, ForceMode.VelocityChange);
 		rb.velocity = vel*transform.forward;
+        if (collision.collider.CompareTag("WeakPoint"))
+        {
+            collision.collider.GetComponent<WeakPoint>().lm.DamageLung(AttackDamage);
+        }
 	}
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            TakeDamage(other.GetComponent<Bullet>().AttackDamage);
+        }
+    }
 }

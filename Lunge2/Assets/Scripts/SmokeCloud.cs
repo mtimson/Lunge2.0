@@ -9,7 +9,7 @@ public class SmokeCloud : Enemy
     private int partsPerCloud = 50;
     private int minParts = 10;
     private List<GameObject> smokeParticles;
-    public Object spPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/prefabs/SmokeParticle.prefab", typeof(GameObject));
+    public GameObject spPrefab;
     private Steering steer;
 
     private Rigidbody rb;
@@ -98,5 +98,13 @@ public class SmokeCloud : Enemy
     {
         GameObject wp = weakPoints[targetWPIndex];
         return new Vector3(wp.transform.position.x, transform.position.y, wp.transform.position.z);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            TakeDamage(other.GetComponent<Bullet>().AttackDamage);
+        }
     }
 }

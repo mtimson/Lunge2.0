@@ -9,13 +9,11 @@ public class PollenCollection : MonoBehaviour {
 	void Awake ()
 	{
 		pollenList = new List<GameObject> ();
-		Debug.Log ("init list");
 	}
 
 	public void AddPollen(GameObject item) 
 	{
 		pollenList.Add (item);
-		Debug.Log (pollenList.Count);
 	}
 
 	public void DeletePollen(GameObject item)

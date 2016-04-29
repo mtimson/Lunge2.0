@@ -94,7 +94,6 @@ public class LevelManager : MonoBehaviour {
             return Levels.Length;
         }
 
-        
     }
 	
 }
