@@ -1,7 +1,7 @@
 Base path: C:/Program Files/Unity/Editor/Data
-<<<<<<< HEAD
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-6872
-=======
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-3736
->>>>>>> origin/Pollenate
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-9324
 Cmd: getPlatforms
+Cmd: compileSnippet
+  api=4 type=0 insize=966 outsize=1290 kw= pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=966 outsize=811 kw= pd= ok=1

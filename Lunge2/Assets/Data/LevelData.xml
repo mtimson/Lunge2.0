@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<LevelContainer>
+  <Levels>
+  <Level>
+    <level>0</level>
+    <weakPoints>2</weakPoints>
+    <waves>2</waves>
+    <enemiesPerWave>5</enemiesPerWave>
+    <enemyStrength>1</enemyStrength>
+</Level>
+    <Level>
+      <level>1</level>
+      <weakPoints>3</weakPoints>
+      <waves>4</waves>
+      <enemiesPerWave>20</enemiesPerWave>
+      <enemyStrength>5</enemyStrength>
+    </Level>
+    </Levels>
+</LevelContainer>
