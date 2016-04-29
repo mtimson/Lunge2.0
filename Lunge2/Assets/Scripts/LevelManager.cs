@@ -57,9 +57,7 @@ public class LevelManager : MonoBehaviour {
         public int waves { get; set; } //number of waves
         [System.Xml.Serialization.XmlElement("enemiesPerWave")]
         public int enemiesPerWave { get; set; } //number of enemies per wave
-        [System.Xml.Serialization.XmlElement("enemyStrength")]
-        public int enemyStrength { get; set; } //enemy strength
-
+        
 
     }
 
@@ -95,8 +93,6 @@ public class LevelManager : MonoBehaviour {
         {
             return Levels.Length;
         }
-
-        
 
         
     }

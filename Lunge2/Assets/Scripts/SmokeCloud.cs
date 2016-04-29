@@ -9,7 +9,7 @@ public class SmokeCloud : Enemy
     private int partsPerCloud = 50;
     private int minParts = 10;
     private List<GameObject> smokeParticles;
-    public GameObject spPrefab;
+    public Object spPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/prefabs/SmokeParticle.prefab", typeof(GameObject));
     private Steering steer;
 
     private Rigidbody rb;
