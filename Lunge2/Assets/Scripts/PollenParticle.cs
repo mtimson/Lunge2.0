@@ -118,5 +118,18 @@ public class PollenParticle : Enemy {
 		transform.forward = Vector3.Reflect (transform.forward, contact.normal);
 		//rb.AddForce (vel * transform.forward, ForceMode.VelocityChange);
 		rb.velocity = vel*transform.forward;
+        if (collision.collider.CompareTag("WeakPoint"))
+        {
+            collision.collider.GetComponent<WeakPoint>().lm.DamageLung(AttackDamage);
+        }
 	}
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            TakeDamage(other.GetComponent<Bullet>().AttackDamage);
+        }
+    }
 }

@@ -15,7 +15,6 @@ public class PollenCollection : MonoBehaviour {
 	public void AddPollen(GameObject item) 
 	{
 		pollenList.Add (item);
-		Debug.Log (pollenList.Count);
 	}
 
 	public void DeletePollen(GameObject item)

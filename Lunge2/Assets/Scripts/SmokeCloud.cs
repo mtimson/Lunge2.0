@@ -99,4 +99,12 @@ public class SmokeCloud : Enemy
         GameObject wp = weakPoints[targetWPIndex];
         return new Vector3(wp.transform.position.x, transform.position.y, wp.transform.position.z);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            TakeDamage(other.GetComponent<Bullet>().AttackDamage);
+        }
+    }
 }
