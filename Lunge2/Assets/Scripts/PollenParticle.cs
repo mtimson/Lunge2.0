@@ -38,22 +38,6 @@ public class PollenParticle : Enemy {
 		steer = new Steering (gameObject, vel);
 	}
 	
-	// Update is called once per frame
-	void Update () 
-	{
-		if(Input.GetKeyDown(KeyCode.Space))
-		{
-			Debug.Log("count in keypress" + pc.GetPollenList().Count);
-			Debug.Log(rb.velocity.magnitude);
-		}
-		if(Input.GetKeyDown(KeyCode.A))
-		{
-			Debug.Log(rb.velocity.magnitude);
-		}
-		//pollenList
-		//Debug.Log (rb.velocity);
-	}
-
 	void FixedUpdate()
 	{
 		transform.forward = rb.velocity.normalized;

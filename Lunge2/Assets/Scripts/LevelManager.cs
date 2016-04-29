@@ -93,11 +93,7 @@ public class LevelManager : MonoBehaviour {
         {
             return Levels.Length;
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> refs/remotes/origin/master
-        
     }
 	
 }

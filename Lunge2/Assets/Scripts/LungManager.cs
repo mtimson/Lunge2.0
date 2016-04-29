@@ -12,24 +12,20 @@ public class LungManager : MonoBehaviour
     public int weakPointsNum;
     public List<GameObject> weakPoints;
     public GameObject lungArea;
-<<<<<<< HEAD
     public GameObject spawnPoint;
-    Object weakPointPrefab;
 
-=======
     LevelManager LM;
     //load enemy prefabs
-    Object weakPointPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/prefab/weakPoint.prefab", typeof(GameObject));
-    Object polPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/prefabs/Pollution.prefab", typeof(GameObject));
-    Object pollenPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/prefabs/Pollen.prefab", typeof(GameObject));
-    Object smokePrefab = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/prefabs/SmokeCloud.prefab", typeof(GameObject));
+    Object weakPointPrefab;
+    Object polPrefab;
+    Object pollenPrefab;
+    Object smokePrefab;
 
     //waves of enemies
     public static int wavesLeft = 0;
     public static int enemiesperwave = 0;
     //enemies per wave
     public static int enemiesLeft = 0;
->>>>>>> refs/remotes/origin/master
     //WeakPoints wp = new WeakPoints();
 
 
@@ -44,7 +40,10 @@ public class LungManager : MonoBehaviour
     //init to level
     void Awake()
     {
-         weakPointPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/prefab/weakPoint.prefab", typeof(GameObject));
+        weakPointPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/prefab/weakPoint.prefab", typeof(GameObject));
+        polPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/prefabs/Pollution.prefab", typeof(GameObject));
+        pollenPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/prefabs/Pollen.prefab", typeof(GameObject));
+        smokePrefab = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/prefabs/SmokeCloud.prefab", typeof(GameObject));
     }
 
     public void init(LevelManager.Level level)
@@ -63,9 +62,6 @@ public class LungManager : MonoBehaviour
         initWave();
     }
 
-
-<<<<<<< HEAD
-=======
     // Update is called once per frame
     void Update()
     {
@@ -82,7 +78,7 @@ public class LungManager : MonoBehaviour
                 string response = LM.initNextLevel(current_level);
                 Debug.Log(response);
 
-}
+            }
             //if there are waves left then init next wave
             else if (wavesLeft > 1)
             {
@@ -131,8 +127,6 @@ public class LungManager : MonoBehaviour
         }
         //decrement waves
         wavesLeft--;
->>>>>>> refs/remotes/origin/master
-
     }
     //generate weak points in lung based on level
     public void generateWeakPoints(int weakPointsNum, GameObject area)
@@ -156,10 +150,7 @@ public class LungManager : MonoBehaviour
             if (terrain.GetComponent<TerrainCollider>().Raycast(ray, out hit, 2.0f * terrainSize.y))
             {
                 pos = hit.point;
-<<<<<<< HEAD
                 
-                Instantiate(weakPointPrefab, pos, Quaternion.identity); }// weakPoints.Add(weakPoint);
-=======
                 // Debug.Log("Hit point: " + hit.point);
 
                 // GameObject weakPoint = new GameObject("weakpoint"+1,typeof(sphere.type));
@@ -169,20 +160,17 @@ public class LungManager : MonoBehaviour
                 // weakPoints[i] = weakPoint;
                 GameObject weakPoint = (GameObject)Instantiate(weakPointPrefab, pos, Quaternion.identity);
                 weakPoint.AddComponent<WeakPoint>();
-
             }// weakPoints.Add(weakPoint);
->>>>>>> refs/remotes/origin/master
 
             else { i--; }
         }
-
 
         //right lung
         for (int i = 0; i < weakPointsNum; i++)
         {
             float xPos = Random.Range(0.20f * terrainSize.x, 0.77f * terrainSize.x);
             float zPos = Random.Range(0.50f * terrainSize.z, 0.78f * terrainSize.z);
-            float yPos = Random.Range(-14.5f, -14f); // terrain.terrainData.GetInterpolatedHeight(xPos, zPos);
+
             Vector3 pos = new Vector3();
             RaycastHit hit;
             Ray ray = new Ray(new Vector3(xPos, 0.1f * terrainSize.y, zPos), Vector3.down);
@@ -205,39 +193,37 @@ public class LungManager : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
-
     public void DamageLung(int amount)
     {
-        Debug.Log("damaged");
         lungHealth -= amount;
-=======
-    //weakpoint collider to take damage from enemies
-    public class WeakPoint : MonoBehaviour
-    {
-
-        //takes damage
-
-        public void takeDamage(int dmg)
-        {
-            LungManager.lungHealth -= dmg;
-            Debug.Log("health: " + lungHealth);
-        }
-        //void OnTriggerEnter(Collider other)
-        void OnCollisionEnter(Collision other)
-        {
-            if (other.gameObject.tag == "Enemy")
-            {
-                Enemy e = other.gameObject.GetComponent<Enemy>();
-
-                {
-                    takeDamage(e.AttackDamage);
-
-                }
-            }
-        }
-
->>>>>>> refs/remotes/origin/master
     }
+
+//    //weakpoint collider to take damage from enemies
+//    public class WeakPoint : MonoBehaviour
+//    {
+
+//        //takes damage
+
+//        public void takeDamage(int dmg)
+//        {
+//            LungManager.lungHealth -= dmg;
+//            Debug.Log("health: " + lungHealth);
+//        }
+//        //void OnTriggerEnter(Collider other)
+//        void OnCollisionEnter(Collision other)
+//        {
+//            if (other.gameObject.tag == "Enemy")
+//            {
+//                Enemy e = other.gameObject.GetComponent<Enemy>();
+
+//                {
+//                    takeDamage(e.AttackDamage);
+
+//                }
+//            }
+//        }
+
+//>>>>>>> refs/remotes/origin/master
+//    }
 
 }
