@@ -57,37 +57,6 @@ public class PollenParticle : Enemy {
 		return SteeringForce;
 	}
 
-//	Vector3 ForceFromFlocking ()
-//	{
-//		Vector3 SteeringForce = new Vector3 ();
-//		Vector3 CenterMass = new Vector3 ();
-//		Vector3 AvgHeading = new Vector3 ();
-//		int partCount = 0;
-//
-//		foreach (GameObject particle in pc.pollenList) 
-//		{
-//			if(particle != gameObject)
-//			{
-//				Vector3 toOther = transform.position - particle.transform.position;
-//				SteeringForce += toOther.normalized / toOther.magnitude;
-//				CenterMass += particle.transform.position;
-//				AvgHeading += particle.transform.forward;
-//				partCount++;
-//			}
-//		}
-//		//Debug.Log ("partCount" + partCount);
-//		if(partCount > 0)
-//		{
-//			AvgHeading /= partCount;
-//			CenterMass /= partCount;
-//		}
-//		SteeringForce = SteeringForce.normalized * separationFactor;
-//		SteeringForce += AvgHeading * alignmentFactor;
-//		SteeringForce += Vector3.Normalize(CenterMass - transform.position) * cohesionFactor;
-//
-//		return SteeringForce.normalized;
-//	}
-
 
 	protected override void DeleteEnemy()
 	{

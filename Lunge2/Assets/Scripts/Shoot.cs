@@ -14,7 +14,7 @@ public class Shoot : MonoBehaviour {
 	void Update ()
     {
         time += Time.deltaTime;
-        if (Input.GetButtonDown("Jump") && time > 0.5f) //only allow 2 bullets/second
+        if (Input.GetButtonDown("Jump") && time > 0.2f) //only allow 5 bullets/second
         {
             GameObject b = (GameObject)Instantiate(bullet, barrel.transform.position, Quaternion.identity);
             b.transform.up = barrel.transform.forward;

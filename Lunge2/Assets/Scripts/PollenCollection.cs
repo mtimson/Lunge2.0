@@ -18,7 +18,6 @@ public class PollenCollection : MonoBehaviour {
 
 	public void DeletePollen(GameObject item)
 	{
-		Debug.Log ("removed?");
 		pollenList.Remove (item);
 	}
 

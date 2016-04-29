@@ -4,9 +4,7 @@ using System.Collections.Generic;
 
 public class Pollution : Enemy
 {
-
-  
-    private int startHealth = 10;
+    private int startHealth = 20;
     private int damage = 5;
 
     private Rigidbody rb;
@@ -52,5 +50,13 @@ void FixedUpdate()
         transform.forward = Vector3.Reflect(transform.forward, contact.normal);
         //rb.AddForce (vel * transform.forward, ForceMode.VelocityChange);
        // rb.velocity = vel * transform.forward;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            TakeDamage(other.GetComponent<Bullet>().AttackDamage);
+        }
     }
 }

@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour {
 	}
 
 	public void switchPause(){ //Switch between pause or not
-        print("SwitchPause");
+
 		if (isPaused) {
 			isPaused = false;
 		} else {
